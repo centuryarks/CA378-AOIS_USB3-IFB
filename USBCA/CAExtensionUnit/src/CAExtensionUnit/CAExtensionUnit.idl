@@ -1,0 +1,61 @@
+// CAExtensionUnit.idl : IDL source for CAExtensionUnit
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (CAExtensionUnit.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+    object,
+    uuid(A817E7A2-43FA-11D0-9E44-00AA00B6770A),
+    dual,
+    helpstring("IExtensionUnit Interface"),
+    pointer_default(unique)
+]
+interface IExtensionUnit : IUnknown{
+    HRESULT get_InfoSize(
+        [out] ULONG *pulSize);
+    HRESULT get_Info(
+        [in] ULONG ulSize,
+        [in, out, size_is(ulSize)] BYTE pInfo[]);
+    HRESULT get_PropertySize(
+        [in] ULONG PropertyId,
+        [out] ULONG *pulSize);
+    HRESULT get_Property(
+        [in] ULONG PropertyId,
+        [in] ULONG ulSize,
+        [in, out, size_is(ulSize)] BYTE pValue[]);
+    HRESULT put_Property(
+        [in] ULONG PropertyId,
+        [in] ULONG ulSize,
+        [in, out, size_is(ulSize)] BYTE pValue[]);
+    HRESULT get_PropertyRange(
+        [in] ULONG PropertyId,
+        [in] ULONG ulSize,
+        [in, out, size_is(ulSize)] BYTE pMin[],
+        [in, out, size_is(ulSize)] BYTE pMax[],
+        [in, out, size_is(ulSize)] BYTE pSteppingDelta[],
+        [in, out, size_is(ulSize)] BYTE pDefault[]);
+};
+
+[
+    uuid(844AA499-951E-4572-9CD8-A8BA5BEEA969),
+    version(1.0),
+    helpstring("CAExtensionUnit 1.0 Type Library"),
+    custom(A817E7A1-43FA-11D0-9E44-00AA00B6770A,"{BB558C0E-C636-4BC3-992C-B717D498D579}")
+]
+library CAExtensionUnitLib
+{
+    importlib("stdole2.tlb");
+
+    [
+        uuid(BB558C0E-C636-4BC3-992C-B717D498D579),
+        helpstring("ExtensionUnit Class")
+    ]
+    coclass ExtensionUnit
+    {
+        [default] interface IExtensionUnit;
+    };
+};

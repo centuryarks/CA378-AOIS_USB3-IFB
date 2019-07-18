@@ -1,0 +1,1676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>480</width>
+      <height>480</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab_Sensor">
+     <attribute name="title">
+      <string>Sensor</string>
+     </attribute>
+     <layout class="QGridLayout" name="gridLayout_TabWidget">
+      <item row="0" column="0">
+       <layout class="QGridLayout" name="gridLayout_Sensor">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox_Mode">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {border:1px solid gray; border-radius:5px; margin-top:1ex;}QGroupBox::title{subcontrol-origin:margin; subcontrol-position:top left; padding:0 0px;}</string>
+          </property>
+          <property name="title">
+           <string>Mode Select</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_Mode">
+           <item>
+            <widget class="QComboBox" name="comboBox_Mode">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1" rowspan="2">
+         <widget class="QGroupBox" name="groupBox_Capture">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {border:1px solid gray; border-radius:5px; margin-top:1ex;}QGroupBox::title{subcontrol-origin:margin; subcontrol-position:top left; padding:0 0px;}</string>
+          </property>
+          <property name="title">
+           <string>Capture</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_Capture">
+           <item>
+            <layout class="QGridLayout" name="gridLayout_MovieRecord">
+             <item row="1" column="1">
+              <widget class="QPushButton" name="pushButton_MovieRecord">
+               <property name="text">
+                <string>Movie</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <widget class="QLabel" name="label_MovieRecord">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Frame:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="3">
+              <widget class="QSpinBox" name="spinBox_MovieRecord">
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>9999</number>
+               </property>
+               <property name="singleStep">
+                <number>1</number>
+               </property>
+               <property name="value">
+                <number>100</number>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="pushButton_StillCapture">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>Still</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_Raw">
+             <item>
+              <widget class="QLabel" name="label_Raw">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;RAW:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QProgressBar" name="progressBar_MovieRecord">
+               <property name="value">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_Rgb">
+             <item>
+              <widget class="QLabel" name="label_Rgb">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;RGB:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QProgressBar" name="progressBar_MovieConvert">
+               <property name="value">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="groupBox_Exposure">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {border:1px solid gray; border-radius:5px; margin-top:1ex;}QGroupBox::title{subcontrol-origin:margin; subcontrol-position:top left; padding:0 0px;}</string>
+          </property>
+          <property name="title">
+           <string>Exposure(Shutter Speed)</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_Exposure">
+           <item>
+            <widget class="QSlider" name="horizontalSlider_Exposure">
+             <property name="minimum">
+              <number>2</number>
+             </property>
+             <property name="maximum">
+              <number>4000</number>
+             </property>
+             <property name="pageStep">
+              <number>100</number>
+             </property>
+             <property name="value">
+              <number>94</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_Exposure">
+             <item>
+              <widget class="QLabel" name="label_Exposure">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Input(2 - 4000):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_ShutterSpeed">
+               <property name="text">
+                <string>1 / </string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_Exposure">
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="minimum">
+                <number>2</number>
+               </property>
+               <property name="maximum">
+                <number>4000</number>
+               </property>
+               <property name="singleStep">
+                <number>1</number>
+               </property>
+               <property name="value">
+                <number>94</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QGroupBox" name="groupBox_AnalogGain">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {border:1px solid gray; border-radius:5px; margin-top:1ex;}QGroupBox::title{subcontrol-origin:margin; subcontrol-position:top left; padding:0 0px;}</string>
+          </property>
+          <property name="title">
+           <string>Analog Gain</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_AnalogGain">
+           <item>
+            <widget class="QSlider" name="horizontalSlider_AnalogGain">
+             <property name="minimum">
+              <number>1000</number>
+             </property>
+             <property name="maximum">
+              <number>22262</number>
+             </property>
+             <property name="pageStep">
+              <number>1000</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_AnalogGain">
+             <item>
+              <widget class="QLabel" name="label_AnalogGain">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Input(1.0 - 22.262):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_AnalogGain">
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="decimals">
+                <number>3</number>
+               </property>
+               <property name="minimum">
+                <double>1.000000000000000</double>
+               </property>
+               <property name="maximum">
+                <double>22.262000000000000</double>
+               </property>
+               <property name="singleStep">
+                <double>0.100000000000000</double>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QGroupBox" name="groupBox_BlackLevel">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {border:1px solid gray; border-radius:5px; margin-top:1ex;}QGroupBox::title{subcontrol-origin:margin; subcontrol-position:top left; padding:0 0px;}</string>
+          </property>
+          <property name="title">
+           <string>Black Level</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_BlackLevel">
+           <item>
+            <widget class="QSlider" name="horizontalSlider_BlackLevel">
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>1023</number>
+             </property>
+             <property name="pageStep">
+              <number>100</number>
+             </property>
+             <property name="value">
+              <number>64</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_BlackLevel">
+             <item>
+              <widget class="QLabel" name="label_BlackLevel">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Input(0 - 1023):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_BlackLevel">
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="minimum">
+                <number>0</number>
+               </property>
+               <property name="maximum">
+                <number>1023</number>
+               </property>
+               <property name="singleStep">
+                <number>1</number>
+               </property>
+               <property name="value">
+                <number>64</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="0" rowspan="2">
+         <widget class="QGroupBox" name="groupBox_WhiteBalance">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {border:1px solid gray; border-radius:5px; margin-top:1ex;}QGroupBox::title{subcontrol-origin:margin; subcontrol-position:top left; padding:0 0px;}</string>
+          </property>
+          <property name="title">
+           <string>White Balance Gain</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_WhiteBalance">
+           <item>
+            <widget class="QSlider" name="horizontalSlider_WhiteBalance_R">
+             <property name="minimum">
+              <number>1000</number>
+             </property>
+             <property name="maximum">
+              <number>15996</number>
+             </property>
+             <property name="pageStep">
+              <number>1000</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_WhiteBalance_R">
+             <item>
+              <widget class="QLabel" name="label_WhiteBalance_R">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;R(1.0 - 15.996):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_WhiteBalance_R">
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="decimals">
+                <number>3</number>
+               </property>
+               <property name="minimum">
+                <double>1.000000000000000</double>
+               </property>
+               <property name="maximum">
+                <double>15.996000000000000</double>
+               </property>
+               <property name="singleStep">
+                <double>0.100000000000000</double>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QSlider" name="horizontalSlider_WhiteBalance_G">
+             <property name="minimum">
+              <number>1000</number>
+             </property>
+             <property name="maximum">
+              <number>15996</number>
+             </property>
+             <property name="pageStep">
+              <number>1000</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_WhiteBalance_G">
+             <item>
+              <widget class="QLabel" name="label_WhiteBalance_G">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;G(1.0 - 15.996):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_WhiteBalance_G">
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="decimals">
+                <number>3</number>
+               </property>
+               <property name="minimum">
+                <double>1.000000000000000</double>
+               </property>
+               <property name="maximum">
+                <double>15.996000000000000</double>
+               </property>
+               <property name="singleStep">
+                <double>0.100000000000000</double>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QSlider" name="horizontalSlider_WhiteBalance_B">
+             <property name="minimum">
+              <number>1000</number>
+             </property>
+             <property name="maximum">
+              <number>15996</number>
+             </property>
+             <property name="pageStep">
+              <number>1000</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_WhiteBalance_B">
+             <item>
+              <widget class="QLabel" name="label_WhiteBalance_B">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;B(1.0 - 15.996):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_WhiteBalance_B">
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="decimals">
+                <number>3</number>
+               </property>
+               <property name="minimum">
+                <double>1.000000000000000</double>
+               </property>
+               <property name="maximum">
+                <double>15.996000000000000</double>
+               </property>
+               <property name="singleStep">
+                <double>0.100000000000000</double>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QGroupBox" name="groupBox_LSC">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {border:1px solid gray; border-radius:5px; margin-top:1ex;}QGroupBox::title{subcontrol-origin:margin; subcontrol-position:top left; padding:0 0px;}</string>
+          </property>
+          <property name="title">
+           <string>LSC (Lens Shading Correction)</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_LSC">
+           <item>
+            <layout class="QGridLayout" name="gridLayout_LSC">
+             <item row="0" column="0">
+              <widget class="QRadioButton" name="radioButton_LSC_Table1">
+               <property name="text">
+                <string>Table1</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QRadioButton" name="radioButton_LSC_Table2">
+               <property name="text">
+                <string>Table2</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QRadioButton" name="radioButton_LSC_Table3">
+               <property name="text">
+                <string>Table3</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QGroupBox" name="groupBox_DefectPixel">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {border:1px solid gray; border-radius:5px; margin-top:1ex;}QGroupBox::title{subcontrol-origin:margin; subcontrol-position:top left; padding:0 0px;}</string>
+          </property>
+          <property name="title">
+           <string>Defect Pixel</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_DefectPixel">
+           <item>
+            <layout class="QGridLayout" name="gridLayout_DefectPixel">
+             <item row="0" column="0">
+              <widget class="QCheckBox" name="checkBox_DefectPixel_Mapped">
+               <property name="text">
+                <string>Mapped couplet correction</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QCheckBox" name="checkBox_DefectPixel_Dynamic">
+               <property name="text">
+                <string>Dynamic singlet correction</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="tab_Expansin">
+     <attribute name="title">
+      <string>Expansion</string>
+     </attribute>
+     <layout class="QGridLayout" name="gridLayout_Expansion_Frame">
+      <item row="0" column="0">
+       <layout class="QGridLayout" name="gridLayout_Expansion">
+        <property name="bottomMargin">
+         <number>200</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox_Gamma">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {border:1px solid gray; border-radius:5px; margin-top:1ex;}QGroupBox::title{subcontrol-origin:margin; subcontrol-position:top left; padding:0 0px;}</string>
+          </property>
+          <property name="title">
+           <string>Gamma Correction</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_Gamma">
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_Gamma">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Input(0.01 - 1.0):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" colspan="2">
+            <widget class="QSlider" name="horizontalSlider_Gamma">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="pageStep">
+              <number>10</number>
+             </property>
+             <property name="value">
+              <number>45</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_Gamma">
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="decimals">
+              <number>2</number>
+             </property>
+             <property name="minimum">
+              <double>0.010000000000000</double>
+             </property>
+             <property name="maximum">
+              <double>1.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.010000000000000</double>
+             </property>
+             <property name="value">
+              <double>0.450000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QCheckBox" name="checkBox_sRGB_Gamma">
+             <property name="text">
+              <string>sRGB Gamma</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QGroupBox" name="groupBox_CCM">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {border:1px solid gray; border-radius:5px; margin-top:1ex;}QGroupBox::title{subcontrol-origin:margin; subcontrol-position:top left; padding:0 0px;}</string>
+          </property>
+          <property name="title">
+           <string>Color Correction Matrix</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_CCM">
+           <item row="0" column="0">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_CCM1">
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="decimals">
+              <number>3</number>
+             </property>
+             <property name="minimum">
+              <double>-9.999000000000001</double>
+             </property>
+             <property name="maximum">
+              <double>9.999000000000001</double>
+             </property>
+             <property name="singleStep">
+              <double>0.100000000000000</double>
+             </property>
+             <property name="value">
+              <double>-1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_CCM2">
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="decimals">
+              <number>3</number>
+             </property>
+             <property name="minimum">
+              <double>-9.999000000000001</double>
+             </property>
+             <property name="maximum">
+              <double>9.999000000000001</double>
+             </property>
+             <property name="singleStep">
+              <double>0.100000000000000</double>
+             </property>
+             <property name="value">
+              <double>-1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_CCM3">
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="decimals">
+              <number>3</number>
+             </property>
+             <property name="minimum">
+              <double>-9.999000000000001</double>
+             </property>
+             <property name="maximum">
+              <double>9.999000000000001</double>
+             </property>
+             <property name="singleStep">
+              <double>0.100000000000000</double>
+             </property>
+             <property name="value">
+              <double>-1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_CCM4">
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="decimals">
+              <number>3</number>
+             </property>
+             <property name="minimum">
+              <double>-9.999000000000001</double>
+             </property>
+             <property name="maximum">
+              <double>9.999000000000001</double>
+             </property>
+             <property name="singleStep">
+              <double>0.100000000000000</double>
+             </property>
+             <property name="value">
+              <double>-1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_CCM5">
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="decimals">
+              <number>3</number>
+             </property>
+             <property name="minimum">
+              <double>-9.999000000000001</double>
+             </property>
+             <property name="maximum">
+              <double>9.999000000000001</double>
+             </property>
+             <property name="singleStep">
+              <double>0.100000000000000</double>
+             </property>
+             <property name="value">
+              <double>-1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_CCM6">
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="decimals">
+              <number>3</number>
+             </property>
+             <property name="minimum">
+              <double>-9.999000000000001</double>
+             </property>
+             <property name="maximum">
+              <double>9.999000000000001</double>
+             </property>
+             <property name="singleStep">
+              <double>0.100000000000000</double>
+             </property>
+             <property name="value">
+              <double>-1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_CCM7">
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="decimals">
+              <number>3</number>
+             </property>
+             <property name="minimum">
+              <double>-9.999000000000001</double>
+             </property>
+             <property name="maximum">
+              <double>9.999000000000001</double>
+             </property>
+             <property name="singleStep">
+              <double>0.100000000000000</double>
+             </property>
+             <property name="value">
+              <double>-1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_CCM8">
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="decimals">
+              <number>3</number>
+             </property>
+             <property name="minimum">
+              <double>-9.999000000000001</double>
+             </property>
+             <property name="maximum">
+              <double>9.999000000000001</double>
+             </property>
+             <property name="singleStep">
+              <double>0.100000000000000</double>
+             </property>
+             <property name="value">
+              <double>-1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QDoubleSpinBox" name="doubleSpinBox_CCM9">
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="decimals">
+              <number>3</number>
+             </property>
+             <property name="minimum">
+              <double>-9.999000000000001</double>
+             </property>
+             <property name="maximum">
+              <double>9.999000000000001</double>
+             </property>
+             <property name="singleStep">
+              <double>0.100000000000000</double>
+             </property>
+             <property name="value">
+              <double>-1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QCheckBox" name="checkBox_Histogram">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Histogram</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QGroupBox" name="groupBox_Contrast">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {border:1px solid gray; border-radius:5px; margin-top:1ex;}QGroupBox::title{subcontrol-origin:margin; subcontrol-position:top left; padding:0 0px;}</string>
+          </property>
+          <property name="title">
+           <string>Contrast</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_Contrast">
+           <item>
+            <widget class="QSlider" name="horizontalSlider_Contrast">
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>64</number>
+             </property>
+             <property name="pageStep">
+              <number>10</number>
+             </property>
+             <property name="value">
+              <number>32</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_Contrast">
+             <item>
+              <widget class="QLabel" name="label_Contrast">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Input(0 - 64):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_Contrast">
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="minimum">
+                <number>0</number>
+               </property>
+               <property name="maximum">
+                <number>64</number>
+               </property>
+               <property name="singleStep">
+                <number>1</number>
+               </property>
+               <property name="value">
+                <number>32</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="tab_AOIS">
+     <attribute name="title">
+      <string>AF &amp;&amp; OIS</string>
+     </attribute>
+     <layout class="QGridLayout" name="gridLayout_13">
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_AOIS">
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>240</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="groupBox_FocusMode">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {border:1px solid gray; border-radius:5px; margin-top:1ex;}QGroupBox::title{subcontrol-origin:margin; subcontrol-position:top left; padding:0 0px;}</string>
+          </property>
+          <property name="title">
+           <string>Focus Mode</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_Focus">
+           <item>
+            <widget class="QSlider" name="horizontalSlider_Focus">
+             <property name="maximum">
+              <number>1023</number>
+             </property>
+             <property name="value">
+              <number>512</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_FocusPosition">
+             <item>
+              <widget class="QLabel" name="label_Focus">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Focus Position(0-1023):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_Focus">
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="maximum">
+                <number>1023</number>
+               </property>
+               <property name="value">
+                <number>512</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_FocusMode">
+             <item>
+              <widget class="QRadioButton" name="radioButton_Infinity">
+               <property name="text">
+                <string>Infinity</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioButton_Direct">
+               <property name="text">
+                <string>Direct</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioButton_Macro">
+               <property name="text">
+                <string>Macro</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="checkBox_AutoFocus">
+             <property name="text">
+              <string>Auto Focus</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="horizontalSlider_AutoFocusGain">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="pageStep">
+              <number>10</number>
+             </property>
+             <property name="value">
+              <number>10</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QLabel" name="label_AutoFocusGain">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Focus Gain(0.1 - 10.0):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDoubleSpinBox" name="doubleSpinBox_AutoFocusGain">
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="decimals">
+                <number>1</number>
+               </property>
+               <property name="minimum">
+                <double>0.100000000000000</double>
+               </property>
+               <property name="maximum">
+                <double>10.000000000000000</double>
+               </property>
+               <property name="singleStep">
+                <double>0.100000000000000</double>
+               </property>
+               <property name="value">
+                <double>1.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_OIS_Mode">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {border:1px solid gray; border-radius:5px; margin-top:1ex;}QGroupBox::title{subcontrol-origin:margin; subcontrol-position:top left; padding:0 0px;}</string>
+          </property>
+          <property name="title">
+           <string>OIS Mode</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="0" column="0">
+            <widget class="QRadioButton" name="radioButton_OIS_Mode0">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>OFF</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QRadioButton" name="radioButton_OIS_Mode3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Movie</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QRadioButton" name="radioButton_OIS_Mode1">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Zero shutter</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QRadioButton" name="radioButton_OIS_Mode4">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>High SR Movie</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QRadioButton" name="radioButton_OIS_Mode2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Exposure/Shake</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QRadioButton" name="radioButton_OIS_Mode5">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>View Finder</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="tab_EEPROM">
+     <attribute name="title">
+      <string>EEPROM</string>
+     </attribute>
+     <layout class="QGridLayout" name="gridLayout_EEPROM">
+      <item row="0" column="0">
+       <layout class="QVBoxLayout" name="verticalLayout_EEPROM">
+        <item>
+         <widget class="QGroupBox" name="groupBox_EEPROM">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {border:1px solid gray; border-radius:5px; margin-top:1ex;}QGroupBox::title{subcontrol-origin:margin; subcontrol-position:top left; padding:0 0px;}</string>
+          </property>
+          <property name="title">
+           <string>EEPROM</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_EEPROM_Select">
+           <item row="3" column="4">
+            <widget class="QPushButton" name="pushButton_EEPROM_Default">
+             <property name="text">
+              <string>Set Default</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="5">
+            <widget class="QPushButton" name="pushButton_EEPROM_Clear">
+             <property name="text">
+              <string>Clear</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="5">
+            <widget class="QPushButton" name="pushButton_EEPROM_Load">
+             <property name="text">
+              <string>Load</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QPushButton" name="pushButton_EEPROM_Save">
+             <property name="text">
+              <string>Save</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3" rowspan="2">
+            <widget class="QComboBox" name="comboBox_EEPROM_Table">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <item>
+              <property name="text">
+               <string>Table1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Table2</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Table3</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Table4</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Table5</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Table6</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Table7</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Table8</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Table9</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Table10</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Table11</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Table12</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Table13</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Table14</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Table15</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Table16</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_LSC_Table">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {border:1px solid gray; border-radius:5px; margin-top:1ex;}QGroupBox::title{subcontrol-origin:margin; subcontrol-position:top left; padding:0 0px;}</string>
+          </property>
+          <property name="title">
+           <string>LSC (Lens Shading Correction) Table</string>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_LSC_Table">
+           <item row="8" column="2">
+            <widget class="QPushButton" name="pushButton_LSC_Upload2">
+             <property name="text">
+              <string>Upload</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="2">
+            <widget class="QPushButton" name="pushButton_LSC_Download2">
+             <property name="text">
+              <string>Download</string>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="2">
+            <widget class="QPushButton" name="pushButton_LSC_Download3">
+             <property name="text">
+              <string>Download</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="2">
+            <widget class="QPushButton" name="pushButton_LSC_Upload3">
+             <property name="text">
+              <string>Upload</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="2">
+            <widget class="QPushButton" name="pushButton_LSC_Download1">
+             <property name="text">
+              <string>Download</string>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="0" colspan="3">
+            <layout class="QHBoxLayout" name="horizontalLayout_LSC_Table3">
+             <item>
+              <widget class="QLabel" name="label_LSC_Table3">
+               <property name="text">
+                <string>Table3</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTextEdit" name="textEdit_LSC_Path3">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="7" column="0" colspan="3">
+            <layout class="QHBoxLayout" name="horizontalLayout_LSC_Table2">
+             <item>
+              <widget class="QLabel" name="label_LSC_Table2">
+               <property name="text">
+                <string>Table2</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTextEdit" name="textEdit_LSC_Path2">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="5" column="2">
+            <widget class="QPushButton" name="pushButton_LSC_Upload1">
+             <property name="text">
+              <string>Upload</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0" colspan="3">
+            <layout class="QHBoxLayout" name="horizontalLayout_LSC_Table1">
+             <item>
+              <widget class="QLabel" name="label_LSC_Table1">
+               <property name="text">
+                <string>Table1</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTextEdit" name="textEdit_LSC_Path1">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="inputMethodHints">
+                <set>Qt::ImhMultiLine</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0" colspan="3">
+            <widget class="QLabel" name="label_LSC_Dummy">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="tab_Layout">
+     <attribute name="title">
+      <string>Layout</string>
+     </attribute>
+     <layout class="QGridLayout" name="gridLayout_FontWindow">
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_FontWindow">
+        <property name="bottomMargin">
+         <number>240</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="groupBox_Font">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {border:1px solid gray; border-radius:5px; margin-top:1ex;}QGroupBox::title{subcontrol-origin:margin; subcontrol-position:top left; padding:0 0px;}</string>
+          </property>
+          <property name="title">
+           <string>Font</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_font">
+           <item>
+            <widget class="QFontComboBox" name="fontComboBox"/>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_font">
+             <item>
+              <widget class="QLabel" name="label_FontPoints">
+               <property name="text">
+                <string>Font Points</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_FontPoints">
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_Window">
+          <property name="styleSheet">
+           <string notr="true">QGroupBox {border:1px solid gray; border-radius:5px; margin-top:1ex;}QGroupBox::title{subcontrol-origin:margin; subcontrol-position:top left; padding:0 0px;}</string>
+          </property>
+          <property name="title">
+           <string>Window</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_Window">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_Left">
+             <item>
+              <widget class="QLabel" name="label_Left">
+               <property name="text">
+                <string>Left</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_Left">
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="maximum">
+                <number>9999</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_Top">
+             <item>
+              <widget class="QLabel" name="label_Top">
+               <property name="text">
+                <string>Top</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_Top">
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="maximum">
+                <number>9999</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_Width">
+             <item>
+              <widget class="QLabel" name="label_Width">
+               <property name="text">
+                <string>Width</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_Width">
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="maximum">
+                <number>9999</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_Height">
+             <item>
+              <widget class="QLabel" name="label_Height">
+               <property name="text">
+                <string>Height</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBox_Height">
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="maximum">
+                <number>9999</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_Apply">
+             <property name="text">
+              <string>Apply</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="sizeGripEnabled">
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

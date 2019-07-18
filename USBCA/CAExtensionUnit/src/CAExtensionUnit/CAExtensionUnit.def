@@ -1,0 +1,10 @@
+; CAExtensionUnit.def : Declares the module parameters.
+
+LIBRARY      "CAExtensionUnit.DLL"
+
+EXPORTS
+    DllCanUnloadNow     PRIVATE
+    DllGetClassObject   PRIVATE
+    DllRegisterServer   PRIVATE
+    DllUnregisterServer PRIVATE
+    DllInstall          PRIVATE

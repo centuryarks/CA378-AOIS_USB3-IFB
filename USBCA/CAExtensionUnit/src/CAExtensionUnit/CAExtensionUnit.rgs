@@ -1,0 +1,60 @@
+HKCR
+{
+    NoRemove AppID
+    {
+        '%APPID%' = s 'CAExtensionUnit'
+        'CAExtensionUnit.DLL'
+        {
+            val AppID = s '%APPID%'
+        }
+    }
+}
+
+HKLM
+{
+    NoRemove SYSTEM
+    {
+        NoRemove CurrentControlSet
+        {
+            NoRemove Control
+            {
+                NoRemove NodeInterfaces
+                {
+                    ForceRemove {31718057-A986-4627-B622-AF50B35305EF} = s 'CenturyArks ExtensionUnit Property Set v1'
+                    {
+                        val IID =   b 'A1E717A8FA43D0119E4400AA00B6770A'
+                        val CLSID = b '0E8C55BB36C6C34B992CB717D498D579'
+                    }
+                }
+            }
+        }
+    }
+}
+
+HKCR
+{
+    ComDLLTest.ExtensionUnit.1 = s 'ExtensionUnit Class v1'
+    {
+        CLSID = s '{BB558C0E-C636-4BC3-992C-B717D498D579}'
+    }
+    ComDLLTest.ExtensionUnit = s 'ExtensionUnit Class v1'
+    {
+        CLSID = s '{BB558C0E-C636-4BC3-992C-B717D498D579}'
+        CurVer = s 'CAExtensionUnit.ExtensionUnit.1'
+    }
+    NoRemove CLSID
+    {
+        ForceRemove {BB558C0E-C636-4BC3-992C-B717D498D579} = s 'CenturyArks ExtensionUnit Interface v1'
+        {
+            ProgID = s 'CAExtensionUnit.ExtensionUnit.1'
+            VersionIndependentProgID = s 'CAExtensionUnit.ExtensionUnit'
+            ForceRemove 'Programmable'
+            InprocServer32 = s '%MODULE%'
+            {
+                val ThreadingModel = s 'Both'
+            }
+            val AppID = s '%APPID%'
+            'TypeLib' = s '{844AA499-951E-4572-9CD8-A8BA5BEEA969}'
+        }
+    }
+}
