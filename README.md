@@ -3,11 +3,10 @@
 USB3 interface board for CA378-AOIS
 
 ## Products
-
 [CA378-AOIS_USB3-IFB](https://www.centuryarks.com/products/sensor/usbcam)
 
-## CA_ViewER Download Package
-[USBCA_v1.3.1](https://github.com/centuryarks/CA378-AOIS_USB3-IFB/releases/download/v1.3.1_release/USBCA_v1.3.1.zip)
+## CA_ViewER Download Package(Executable binary)
+[USBCA_v1.3.1.zip](https://github.com/centuryarks/CA378-AOIS_USB3-IFB/releases/download/v1.3.1_release/USBCA_v1.3.1.zip)
 
 ## Source Code - USBCA
 
