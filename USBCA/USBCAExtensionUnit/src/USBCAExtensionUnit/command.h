@@ -1,7 +1,7 @@
 #ifndef __COMMAND_H__
 #define __COMMAND_H__
 
-// Extention Uint ƒRƒ}ƒ“ƒhˆê——:
+// List of extension unit commands:
 typedef enum E_CA378_COMMAND
 {
     CONFIG_AUTO         = 0x80,         // config AUTO (UVC Setting)
