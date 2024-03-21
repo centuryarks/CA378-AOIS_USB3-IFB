@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2017-2019, CenturyArks
+Copyright (c) 2017-2024, CenturyArks
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -34,7 +34,6 @@ either expressed or implied, of the FreeBSD Project.
  *  Declare function for Capture
  **************************************************************/
 void SetSelectMode(int mode);
-void SetGammaValue(double value);
 void EnableGamma(bool enable);
 void EnableCCM(bool enable);
 void EnableContrast(bool enable, int value);

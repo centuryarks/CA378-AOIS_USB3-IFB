@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2019, CenturyArks
+Copyright (c) 2019-2024, CenturyArks
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -215,9 +215,9 @@ BOOL EnumerateHubPorts(USHORT vId, USHORT pId, PUSHORT usbVersoin, HANDLE hHubDe
         success = DeviceIoControl(hHubDevice,
             IOCTL_USB_GET_NODE_CONNECTION_INFORMATION,
             &connectionInfo,
-            nBytes,
+            sizeof(USB_NODE_CONNECTION_INFORMATION),
             &connectionInfo,
-            nBytes,
+            sizeof(USB_NODE_CONNECTION_INFORMATION),
             &nBytes,
             NULL);
         if (!success) continue;

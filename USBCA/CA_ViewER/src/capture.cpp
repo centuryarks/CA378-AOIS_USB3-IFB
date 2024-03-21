@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2017-2019, CenturyArks
+Copyright (c) 2017-2024, CenturyArks
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -53,9 +53,7 @@ int RAW_HEIGHT;                         // RAW10 pack height
 int RGB_HEIGHT;                         // RGB width
 int RGB_WIDTH;                          // RGB height
 ushort g_gammaTable[GAMMA_TABLE_NUM];   // 16bit gamma correction table
-double g_gamma_value     = 0.45;        // gamma value
 bool g_bEnableGamma      = false;       // enable gamma
-bool g_bSRGBGamma        = false;       // sRGB gamma
 bool g_bEnableCCM        = false;       // enable CCM(Color Correction Matrix)
 bool g_bRunCapture       = false;       // run captrue flag
 bool g_bStillCapture     = false;       // still capture flag
@@ -88,18 +86,6 @@ size_t g_nCapturedFrames = 0;           // captured frames
 void SetSelectMode(int mode)
 {
     g_iSelectMode = mode;
-}
-
-/*******************************************************************************
- * @brief   Set gamma value
- *
- * @param   value       Gamma value
- *
- * @return  void
- ******************************************************************************/
-void SetGammaValue(double value)
-{
-    g_gamma_value = value;
 }
 
 /*******************************************************************************
@@ -687,7 +673,7 @@ void DrawHistogram(Mat rgb_img)
  *
  * @return  0 Success, other Failure
  ******************************************************************************/
-unsigned __stdcall capture_thrread(void* pArguments)
+unsigned __stdcall capture_thread(void* pArguments)
 {
     Mat frame, bayer_img, rgb_img;
     VideoCapture capture;
@@ -773,18 +759,6 @@ unsigned __stdcall capture_thrread(void* pArguments)
     cout << "     height: " << capture.get(CAP_PROP_FRAME_HEIGHT) << endl;
     cout << "Capturing FPS: " << capture.get(CAP_PROP_FPS) << endl;
     cout << endl << "Start Capturing..." << endl;
-
-    //
-    // Update gamma table
-    //
-    if (g_bSRGBGamma)
-    {
-        UpdateSRGBGammaTable();
-    }
-    else
-    {
-        UpdateGammaTable(g_gamma_value);
-    }
 
     //
     // Start capture
@@ -946,7 +920,7 @@ unsigned __stdcall capture_thrread(void* pArguments)
 void StartCapture(void)
 {
     g_hCaptureThread = (HANDLE)_beginthreadex(
-        NULL, 0, capture_thrread, NULL, 0, &g_uThreadID);
+        NULL, 0, capture_thread, NULL, 0, &g_uThreadID);
 }
 
 /*******************************************************************************

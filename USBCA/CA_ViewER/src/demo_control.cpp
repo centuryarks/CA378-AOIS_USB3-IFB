@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2017-2019, CenturyArks
+Copyright (c) 2017-2024, CenturyArks
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -377,7 +377,6 @@ int DemoControl(ST_PARAM* param, E_DEMO_CMD cmd)
 
     case CMD_GAMMA:             // Gamma Correction
         {
-            SetGammaValue(param->gamma_value);
             EnableGamma(param->enable_gamma);
             if (param->enable_gamma)
             {

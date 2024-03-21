@@ -3,10 +3,10 @@
 USB3 interface board for CA378-AOIS
 
 ## Products
-[CA378-AOIS_USB3-IFB](https://www.centuryarks.com/products/sensor/usbcam)
+[CA378-AOIS_USB3-IFB](https://centuryarks.com/usbcam/)
 
 ## CA_ViewER Download Package(Executable binary)
-[USBCA_v1.3.1.zip](https://github.com/centuryarks/CA378-AOIS_USB3-IFB/releases/download/v1.3.1_release/USBCA_v1.3.1.zip)
+[USBCA_v1.3.2.zip](https://github.com/centuryarks/CA378-AOIS_USB3-IFB/releases/download/v1.3.2_release/USBCA_v1.3.2.zip)
 
 ## Source Code - USBCA
 
@@ -15,10 +15,10 @@ USB3 interface board for CA378-AOIS
 - Imaging Application
 
     - Operating environment
-        1. CMake 3.1.0 or more
+        1. CMake 3.28.3 or more
         1. Qt 5.6.0 or more
         1. OpenCV 3.4.2
-        1. Visual Studio 2017
+        1. Visual Studio 2022
 
     - How to build(ex. 64bit)
         1. Run "USBCA\CA_ViewER\src\build_x64.bat".

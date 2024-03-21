@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2017-2019, CenturyArks
+Copyright (c) 2017-2024, CenturyArks
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -40,7 +40,7 @@ either expressed or implied, of the FreeBSD Project.
 /***************************************************************
  *  Defines for Main window
  **************************************************************/
-#define VERSION             "CA_ViewER  ver 1.3.1"
+#define VERSION             "CA_ViewER  ver 1.3.2"
 
 #define PIXEL_RATE      (840000000)
 #define LINE_LENGTH     (4375)
