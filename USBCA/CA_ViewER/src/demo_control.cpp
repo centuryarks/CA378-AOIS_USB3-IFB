@@ -78,6 +78,21 @@ int DemoInit(ST_PARAM* param)
 
     if (g_pExpUnit)
     {
+#ifdef CA378_AOIS
+        uint8_t majorVer = 0;
+        uint8_t minorVer = 0;
+        uint8_t revision = 0;
+        // Get FW Version
+        ret = g_pExpUnit->CA378_GetFwVersion(&majorVer, &minorVer, &revision);
+        printf("CA378_GetFwVersion: ver%d.%d.%d ret = %X\r\n", majorVer, minorVer, revision, ret);
+        if (ret == 0)
+        {
+            if (majorVer >= 2)
+            {
+                param->af_ois_options = revision;
+            }
+        }
+#endif
         // Exposure
         ret = g_pExpUnit->CA378_GetExposure(&value);
         if (ret == 0)

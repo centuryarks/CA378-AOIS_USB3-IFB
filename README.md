@@ -2,11 +2,13 @@
 
 USB3 interface board for CA378-AOIS
 
+Support for CA378-AOIS-V2, CA378-V2wide
+
 ## Products
 [CA378-AOIS_USB3-IFB](https://centuryarks.com/usbcam/)
 
 ## CA_ViewER Download Package(Executable binary)
-[USBCA_v1.3.2.zip](https://github.com/centuryarks/CA378-AOIS_USB3-IFB/releases/download/v1.3.2_release/USBCA_v1.3.2.zip)
+[USBCA_v2.0.0.zip](https://github.com/centuryarks/CA378-AOIS_USB3-IFB/releases/download/v2.0.0_release/USBCA_v2.0.0.zip)
 
 ## Source Code - USBCA
 
@@ -38,6 +40,14 @@ USB3 interface board for CA378-AOIS
 ### CAExtensionUnit
 
 - CA Extension Unit COM+ API DLL
+
+## FW Update - CA378-AOIS_USB3-IFB
+
+If you use CA378-AOIS-V2 or CA378-V2wide, please update the firmware of CA378-AOIS_USB3-IFB.
+
+[FW_Updater_v2.0.0.zip](https://github.com/centuryarks/CA378-AOIS_USB3-IFB/releases/download/v2.0.0_release/FW_Updater_v2.0.0.zip)
+
+[FW image file](https://github.com/centuryarks/CA378-AOIS_USB3-IFB/releases/download/v2.0.0_release/Cx3Rgb24IMX378_v2.0.0.img)
 
 #### For questions please contact us
 ca-qa@centuryarks.com

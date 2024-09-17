@@ -224,6 +224,21 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->radioButton_OIS_Mode5->setChecked(false);
         break;
     }
+
+    if (param.af_ois_options == 1)
+    {
+        ui->radioButton_OIS_Mode1->setText("ON");
+        ui->radioButton_OIS_Mode2->hide();
+        ui->radioButton_OIS_Mode3->hide();
+        ui->radioButton_OIS_Mode4->hide();
+        ui->radioButton_OIS_Mode5->hide();
+        ui->groupBox_OIS_Mode->setEnabled(false);
+    }
+    else if (param.af_ois_options == 2)
+    {
+        ui->tabWidget->setTabEnabled(2, false);
+    }
+
 #endif
 
     //

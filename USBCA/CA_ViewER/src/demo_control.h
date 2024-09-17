@@ -117,6 +117,7 @@ struct ST_PARAM
 
 #ifdef CA378_AOIS
     // AF & OIS
+    int af_ois_options          = 0;    // 0: CA378_AOIS  1: CA378_AOIS-V2  2: CA378-V2wide
     int focus_position          = 512;
     int manual_focus_position   = 512;
     int focus_mode              = FOCUS_MODE_DIRECT;

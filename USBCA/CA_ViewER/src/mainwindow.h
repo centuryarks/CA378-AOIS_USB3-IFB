@@ -40,7 +40,7 @@ either expressed or implied, of the FreeBSD Project.
 /***************************************************************
  *  Defines for Main window
  **************************************************************/
-#define VERSION             "CA_ViewER  ver 1.3.2"
+#define VERSION             "CA_ViewER  ver 2.0.0"
 
 #define PIXEL_RATE      (840000000)
 #define LINE_LENGTH     (4375)
